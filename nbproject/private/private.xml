@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ZMain.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaUser.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaMetodosPagos.fxml</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoCarrito.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaProducto.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerCatalogo.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerMetodosPagos.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaRegister.fxml</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoProducto.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoUser.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaCatalogo.fxml</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaCarrito.java</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaPrincipal.fxml</file>
+        </group>
+    </open-files>
+</project-private>
