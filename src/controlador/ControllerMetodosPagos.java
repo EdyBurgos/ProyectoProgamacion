@@ -6,7 +6,12 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -15,6 +20,19 @@ import javafx.fxml.Initializable;
  */
 public class ControllerMetodosPagos implements Initializable {
 
+    @FXML
+    private ComboBox<?> cmbMetodos;
+    @FXML
+    private TextField txtNumCuenta;
+    @FXML
+    private TextField txtValPagar;
+    @FXML
+    private TextField txtFegaExp;
+    @FXML
+    private TextField txtCVV;
+    @FXML
+    private Button btnPagar;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +40,9 @@ public class ControllerMetodosPagos implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void RealizarPago(ActionEvent event) {
+    }
     
 }

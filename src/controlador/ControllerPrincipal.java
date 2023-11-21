@@ -6,7 +6,10 @@ package controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -15,6 +18,11 @@ import javafx.fxml.Initializable;
  */
 public class ControllerPrincipal implements Initializable {
 
+    @FXML
+    private Button btnIngesar;
+    @FXML
+    private Button btnReg;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +30,13 @@ public class ControllerPrincipal implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void IniciarSesion(ActionEvent event) {
+    }
+
+    @FXML
+    private void Registrarse(ActionEvent event) {
+    }
     
 }
