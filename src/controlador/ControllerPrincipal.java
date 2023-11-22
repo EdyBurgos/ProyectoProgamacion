@@ -4,12 +4,21 @@
  */
 package controlador;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -22,21 +31,68 @@ public class ControllerPrincipal implements Initializable {
     private Button btnIngesar;
     @FXML
     private Button btnReg;
+    @FXML
+    private ImageView imgVPortada;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        Image image = new Image(getClass().getResourceAsStream("/Imagenes/portada.jpg"));
+        imgVPortada.setImage(image);
+    }
 
     @FXML
     private void IniciarSesion(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaCatalogo.fxml"));
+            Parent root = loader.load();
+
+            Stage vtnCatalogo = new Stage();
+            vtnCatalogo.setTitle("CATALOGO");
+            vtnCatalogo.setScene(new Scene(root));
+            ControllerCatalogo controlCatalog = loader.getController();
+
+            mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
+            vtnCatalogo.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void Registrarse(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaRegister.fxml"));
+            Parent root = loader.load();
+
+            Stage vtnRegister = new Stage();
+            vtnRegister.setTitle("REGISTRESE!!");
+            vtnRegister.setScene(new Scene(root));
+
+            // Obtén el controlador de la segunda ventana si es necesario
+            ControllerRegister controlRegister = loader.getController();
+
+            vtnRegister.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    
+
+    private void mostrarAlerta(String info, String msj) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setTitle(info);
+        alert.setContentText(msj);
+
+        DialogPane dialogPane = alert.getDialogPane();
+
+        dialogPane.setStyle("-fx-background-color: red; -fx-text-fill: white;");
+        //dialogPane.setStyle("-fx-text-fill: white;");
+
+        alert.showAndWait();
+    }
+
 }

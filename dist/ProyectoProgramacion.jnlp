@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProyectoProgramacion.jar" size="2793" download="eager" />
+    <jar href="ProyectoProgramacion.jar" size="327888" download="eager" />
     <jar href="lib\javafx-swt.jar" size="37119" download="eager" />
     <jar href="lib\javafx.base.jar" size="755038" download="eager" />
     <jar href="lib\javafx.controls.jar" size="2577983" download="eager" />
@@ -18,6 +18,6 @@
     <jar href="lib\javafx.swing.jar" size="89688" download="eager" />
     <jar href="lib\javafx.web.jar" size="727749" download="eager" />
   </resources>
-  <jfx:javafx-desc  width="800" height="600" main-class="proyectoprogramacion.ProyectoProgramacion"  name="ProyectoProgramacion" />
+  <jfx:javafx-desc  width="800" height="600" main-class="controlador.ZMain"  name="ProyectoProgramacion" />
   <update check="always"/>
 </jnlp>

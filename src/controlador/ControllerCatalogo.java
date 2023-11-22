@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -49,6 +50,10 @@ public class ControllerCatalogo implements Initializable {
 
     @FXML
     private void MostrarLibro(ActionEvent event) {
+    }
+
+    @FXML
+    private void MostrarDetalles(MouseEvent event) {
     }
     
 }
