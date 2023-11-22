@@ -10,7 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -31,6 +35,24 @@ public class ControllerCatalogo implements Initializable {
     private Button btnDetalles3;
     @FXML
     private Button btnDetalles4;
+    @FXML
+    private ImageView imgVLib1;
+    @FXML
+    private ImageView imgVLib2;
+    @FXML
+    private ImageView imgVLib3;
+    @FXML
+    private ImageView imgVLib4;
+    @FXML
+    private BorderPane contendDetalles;
+    @FXML
+    private ImageView unaFoto;
+    @FXML
+    private Button btnVolver;
+    @FXML
+    private ImageView btnIconUser;
+    @FXML
+    private VBox vtnOptionUser;
 
     /**
      * Initializes the controller class.
@@ -38,7 +60,7 @@ public class ControllerCatalogo implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void VerCarrito(ActionEvent event) {
@@ -50,10 +72,27 @@ public class ControllerCatalogo implements Initializable {
 
     @FXML
     private void MostrarLibro(ActionEvent event) {
+        contendDetalles.setVisible(true);
     }
 
     @FXML
     private void MostrarDetalles(MouseEvent event) {
+        ImageView clickedImageView = (ImageView) event.getSource();
+        Image clickedImage = clickedImageView.getImage();
+
+        // Coloca la imagen del ImageView clicado en el outputImageView
+        unaFoto.setImage(clickedImage);
+        contendDetalles.setVisible(true);
     }
-    
+
+    @FXML
+    private void VolverCatalogo(ActionEvent event) {
+        contendDetalles.setVisible(false);
+
+    }
+
+    @FXML
+    private void OptionUser(MouseEvent event) {
+        vtnOptionUser.setVisible(!vtnOptionUser.isVisible());
+    }
 }

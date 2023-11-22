@@ -37,13 +37,13 @@ public class ListaUser {
     public void makeBuy() {
 
     }
-    
-    public void guardarInfoUser(){
-        
+
+    public void guardarInfoUser() {
+
     }
-    
-    public void cargarInfoUser(){
-        
+
+    public void cargarInfoUser() {
+
     }
 
 }

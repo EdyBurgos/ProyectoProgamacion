@@ -12,72 +12,72 @@
 
 
 <AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="422.0" style="-fx-background-color: #185B00;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="controlador.ControllerRegister">
-   <children>
-      <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="327.0" style="-fx-background-color: #29B740;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label text="REGISTRESE" textFill="WHITE">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtNombre" promptText="Nombre de Usuario" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtCorreo" promptText="Correo Electronico" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtPasswd" promptText="Contraseña" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtConfPass" promptText="Escria su contraseña nuevamente" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtNumCell" promptText="Número de celular" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <DatePicker fx:id="txtFechaNac" prefHeight="25.0" prefWidth="616.0" promptText="Fecha de naciemiento" style="-fx-background-radius: 10;">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
-                     </VBox.margin>
-                  </DatePicker>
-                  <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#RegistarUser" prefHeight="25.0" prefWidth="267.0" style="-fx-background-radius: 10; -fx-background-color: #185B00;" text="REGISTRARSE" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
-   </children>
+    <children>
+        <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="327.0" style="-fx-background-color: #29B740;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <center>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label text="REGISTRESE" textFill="WHITE">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtNombre" promptText="Nombre de Usuario" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="txtCorreo" promptText="Correo Electronico" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="txtPasswd" promptText="Contraseña" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="txtConfPass" promptText="Escria su contraseña nuevamente" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="txtNumCell" promptText="Número de celular" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                        <DatePicker fx:id="txtFechaNac" prefHeight="25.0" prefWidth="616.0" promptText="Fecha de naciemiento" style="-fx-background-radius: 10;">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                            </VBox.margin>
+                        </DatePicker>
+                        <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#RegistarUser" prefHeight="25.0" prefWidth="267.0" style="-fx-background-radius: 10; -fx-background-color: #185B00;" text="REGISTRARSE" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
 </AnchorPane>

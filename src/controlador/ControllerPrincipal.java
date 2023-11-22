@@ -16,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -28,19 +27,18 @@ import javafx.stage.Stage;
 public class ControllerPrincipal implements Initializable {
 
     @FXML
+    private ImageView imgVPortada;
+    @FXML
     private Button btnIngesar;
     @FXML
     private Button btnReg;
-    @FXML
-    private ImageView imgVPortada;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Image image = new Image(getClass().getResourceAsStream("/Imagenes/portada.jpg"));
-        imgVPortada.setImage(image);
+        // TODO
     }
 
     @FXML
@@ -52,13 +50,15 @@ public class ControllerPrincipal implements Initializable {
             Stage vtnCatalogo = new Stage();
             vtnCatalogo.setTitle("CATALOGO");
             vtnCatalogo.setScene(new Scene(root));
+
+            // Obtén el controlador de la segunda ventana si es necesario
             ControllerCatalogo controlCatalog = loader.getController();
 
             mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
             vtnCatalogo.showAndWait();
-
         } catch (IOException e) {
             e.printStackTrace();
+
         }
     }
 
@@ -69,13 +69,13 @@ public class ControllerPrincipal implements Initializable {
             Parent root = loader.load();
 
             Stage vtnRegister = new Stage();
-            vtnRegister.setTitle("REGISTRESE!!");
+            vtnRegister.setTitle("CATALOGO");
             vtnRegister.setScene(new Scene(root));
 
             // Obtén el controlador de la segunda ventana si es necesario
             ControllerRegister controlRegister = loader.getController();
 
-            vtnRegister.show();
+            vtnRegister.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -89,10 +89,8 @@ public class ControllerPrincipal implements Initializable {
 
         DialogPane dialogPane = alert.getDialogPane();
 
-        dialogPane.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-        //dialogPane.setStyle("-fx-text-fill: white;");
-
         alert.showAndWait();
+
     }
 
 }

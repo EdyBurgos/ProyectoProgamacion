@@ -1,11 +1,10 @@
 package modelo;
 
 // @author Juan Noriega
-
 import java.util.Date;
 
-
 public class NodoProducto {
+
     private int id;
     private String titulo;
     private String autor;
@@ -24,7 +23,6 @@ public class NodoProducto {
         this.sig = sig;
         this.ant = ant;
     }
-    
 
     public int getId() {
         return id;
