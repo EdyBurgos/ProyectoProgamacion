@@ -19,7 +19,7 @@
             <right>
                 <VBox prefHeight="214.0" prefWidth="421.0" style="-fx-background-color: #29B740; -fx-background-radius: 15 0 0 0;" BorderPane.alignment="CENTER">
                     <children>
-                        <TextField prefWidth="341.0" promptText="USUARIO" style="-fx-background-radius: 12;">
+                        <TextField fx:id="txtNomUser" prefWidth="341.0" promptText="USUARIO" style="-fx-background-radius: 12;">
                             <VBox.margin>
                                 <Insets left="40.0" right="40.0" top="40.0" />
                             </VBox.margin>
@@ -30,7 +30,7 @@
                                 <Font size="14.0" />
                             </font>
                         </TextField>
-                        <TextField promptText="CONTRAEÑA" style="-fx-background-radius: 12;">
+                        <TextField fx:id="txtPasswd" promptText="CONTRAEÑA" style="-fx-background-radius: 12;">
                             <VBox.margin>
                                 <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                             </VBox.margin>

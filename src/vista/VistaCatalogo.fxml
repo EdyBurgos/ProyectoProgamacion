@@ -243,7 +243,7 @@
                 </HBox>
             </center>
         </BorderPane>
-        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="417.0" prefWidth="776.0" style="-fx-background-color: #185B00;">
+        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="417.0" prefWidth="776.0" style="-fx-background-color: #185B00;" visible="false">
             <right>
                 <VBox alignment="TOP_CENTER" prefHeight="387.0" prefWidth="490.0" style="-fx-background-color: #29B740; -fx-background-radius: 15 0 0 0;" BorderPane.alignment="CENTER">
                     <BorderPane.margin>

@@ -20,8 +20,16 @@ public class ListaUser {
         this.cab = null;
     }
 
-    public ListaUser getUser(int idUser) {
-        return null;
+    public boolean getUser(String correo) {
+        // Verifica si ya existe un usuario con el mismo correo
+        NodoUser actual = cab;
+        while (actual != null) {
+            if (actual.getCorreo().equals(correo)) {
+                return true; // El correo ya está registrado
+            }
+            actual = actual.getSig();
+        }
+        return false; // El correo no está registrado
     }
 
     public void addUser(
@@ -32,7 +40,7 @@ public class ListaUser {
             DatePicker txtFechaNac) {
 
         // Verifica si el correo ya está registrado
-        if (correoYaRegistrado(txtCorreo.getText())) {
+        if (getUser(txtCorreo.getText())) {
             mostrarAlerta("Error", "Ya existe un usuario con este correo.");
             return;
         }
@@ -57,18 +65,6 @@ public class ListaUser {
             cab = nuevoNodo; // El nuevo nodo ahora es la cabecera
         }
         mostrarAlerta("Registro Exitoso", "¡¡Se ha registrado de manera exitosa!!");
-    }
-
-    private boolean correoYaRegistrado(String correo) {
-        // Verifica si ya existe un usuario con el mismo correo
-        NodoUser actual = cab;
-        while (actual != null) {
-            if (actual.getCorreo().equals(correo)) {
-                return true; // El correo ya está registrado
-            }
-            actual = actual.getSig();
-        }
-        return false; // El correo no está registrado
     }
 
     public void guardarInfoUser() {

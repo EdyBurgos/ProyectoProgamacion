@@ -97,6 +97,7 @@ public class ControllerCatalogo implements Initializable {
     @FXML
     private void OptionUser(MouseEvent event) {
         vtnOptionUser.setVisible(!vtnOptionUser.isVisible());
+        
     }
 
     @FXML
@@ -105,14 +106,14 @@ public class ControllerCatalogo implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaMetodosPagos.fxml"));
             Parent root = loader.load();
 
-            Stage vtnCatalogo = new Stage();
-            vtnCatalogo.setTitle("REALIZAR PAGO");
-            vtnCatalogo.setScene(new Scene(root));
+            Stage vtnPagos = new Stage();
+            vtnPagos.setTitle("REALIZAR PAGO");
+            vtnPagos.setScene(new Scene(root));
 
             // Obtén el controlador de la segunda ventana si es necesario
-            ControllerCatalogo controlCatalog = loader.getController();
+            ControllerMetodosPagos controlCatalog = loader.getController();
 
-            vtnCatalogo.showAndWait();
+            vtnPagos.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
 

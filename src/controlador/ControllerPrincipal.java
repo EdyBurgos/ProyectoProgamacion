@@ -16,44 +16,54 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import modelo.ListaUser;
 
 public class ControllerPrincipal implements Initializable {
 
+    ListaUser userMetod = new ListaUser();
     @FXML
     private ImageView imgVPortada;
     @FXML
     private Button btnIngesar;
     @FXML
     private Button btnReg;
-
-    ListaUser userMetod = new ListaUser();
+    @FXML
+    private TextField txtNomUser;
+    @FXML
+    private TextField txtPasswd;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userMetod.cargarInfoUser();
+        
     }
 
     @FXML
     private void IniciarSesion(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaCatalogo.fxml"));
-            Parent root = loader.load();
+        if (userMetod.getUser(txtNomUser.getText())){
+            
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaCatalogo.fxml"));
+                Parent root = loader.load();
 
-            Stage vtnCatalogo = new Stage();
-            vtnCatalogo.setTitle("CATALOGO");
-            vtnCatalogo.setScene(new Scene(root));
+                Stage vtnCatalogo = new Stage();
+                vtnCatalogo.setTitle("CATALOGO");
+                vtnCatalogo.setScene(new Scene(root));
 
-            // Obtén el controlador de la segunda ventana si es necesario
-            ControllerCatalogo controlCatalog = loader.getController();
+                // Obtén el controlador de la segunda ventana si es necesario
+                ControllerCatalogo controlCatalog = loader.getController();
 
-            mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
-            vtnCatalogo.showAndWait();
-        } catch (IOException e) {
-            e.printStackTrace();
+                mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
+                vtnCatalogo.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
 
+            }
+        } else{
+            mostrarAlerta("INFO LOGIN", "Hubo un error");
         }
     }
 
