@@ -1,6 +1,5 @@
 package modelo;
 
-// @author Juan Noriega
 public class ListaCarrito {
 
     NodoCarrito cab;

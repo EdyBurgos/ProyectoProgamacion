@@ -1,8 +1,6 @@
 package modelo;
 
-// @author Juan Noriega
 import java.util.Date;
-// @author Juan Noriega
 
 public class NodoCarrito extends NodoProducto {
 

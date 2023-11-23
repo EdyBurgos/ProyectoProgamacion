@@ -13,11 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author Juan Noriega
- */
 public class ControllerMetodosPagos implements Initializable {
 
     @FXML

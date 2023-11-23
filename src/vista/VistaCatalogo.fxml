@@ -18,17 +18,17 @@
             <top>
                 <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #29B740;" BorderPane.alignment="CENTER">
                     <children>
-                  <ImageView fx:id="btnIconUser" fitHeight="63.0" fitWidth="66.0" onMouseClicked="#OptionUser" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets right="520.0" />
-                     </HBox.margin>
-                     <image>
-                        <Image url="@../Imagenes/ICON_USER.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
+                        <ImageView fx:id="btnIconUser" fitHeight="63.0" fitWidth="66.0" onMouseClicked="#OptionUser" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets right="520.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@../Imagenes/ICON_USER.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
                         <Button fx:id="btnVerCarrio" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="25.0" prefWidth="78.0" text="Carrito">
                             <HBox.margin>
                                 <Insets right="10.0" />
@@ -75,27 +75,27 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                        <Label text="Precio:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Año de publicacion" wrapText="true">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Autor:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                                <Label text="Precio:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Año de publicacion" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Autor:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
                             </children>
                         </VBox>
                         <VBox alignment="TOP_CENTER" prefHeight="279.0" prefWidth="183.0" style="-fx-background-color: #58CB55; -fx-background-radius: 10;">
@@ -119,27 +119,27 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                        <Label text="Precio:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Año de publicacion" wrapText="true">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Autor:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                                <Label text="Precio:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Año de publicacion" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Autor:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
                             </children>
                             <HBox.margin>
                                 <Insets bottom="60.0" left="15.0" right="15.0" top="50.0" />
@@ -166,27 +166,27 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                        <Label text="Precio:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Año de publicacion" wrapText="true">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Autor:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                                <Label text="Precio:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Año de publicacion" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Autor:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
                             </children>
                             <HBox.margin>
                                 <Insets bottom="60.0" left="15.0" right="15.0" top="50.0" />
@@ -213,27 +213,27 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                        <Label text="Precio:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Año de publicacion" wrapText="true">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label text="Autor:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                                <Label text="Precio:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Año de publicacion" wrapText="true">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label text="Autor:">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
                             </children>
                             <HBox.margin>
                                 <Insets bottom="60.0" left="15.0" right="30.0" top="50.0" />
@@ -243,38 +243,38 @@
                 </HBox>
             </center>
         </BorderPane>
-        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="417.0" prefWidth="776.0" style="-fx-background-color: #185B00;" visible="false">
+        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="417.0" prefWidth="776.0" style="-fx-background-color: #185B00;">
             <right>
                 <VBox alignment="TOP_CENTER" prefHeight="387.0" prefWidth="490.0" style="-fx-background-color: #29B740; -fx-background-radius: 15 0 0 0;" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets top="30.0" />
                     </BorderPane.margin>
-               <children>
-                  <Label text="TITULO LIBRO" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </Label>
-                  <Label prefHeight="57.0" prefWidth="455.0" text="DESCRIPCION" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <padding>
-                        <Insets top="30.0" />
-                     </padding>
-                  </Label>
-                  <Label prefHeight="264.0" prefWidth="455.0" text="BREVE DESCRIPCION DEL LIBRO" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </Label>
-               </children>
+                    <children>
+                        <Label text="TITULO LIBRO" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
+                        </Label>
+                        <Label prefHeight="57.0" prefWidth="455.0" text="DESCRIPCION" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <padding>
+                                <Insets top="30.0" />
+                            </padding>
+                        </Label>
+                        <Label prefHeight="264.0" prefWidth="455.0" text="BREVE DESCRIPCION DEL LIBRO" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets top="5.0" />
+                            </padding>
+                        </Label>
+                    </children>
                 </VBox>
             </right>
             <left>
@@ -282,41 +282,46 @@
                     <children>
                         <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#VolverCatalogo" text="VOLVER" />
                         <ImageView fx:id="unaFoto" fitHeight="214.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin></ImageView>
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                        </ImageView>
                         <Label text="Precio: " textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                        <Button mnemonicParsing="false" prefWidth="150.0" text="Comprar">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin></Button>
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#RealizarCompra" prefWidth="150.0" text="Comprar">
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                        </Button>
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Agregar al carrito">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin></Button>
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                        </Button>
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Agregar a favoritos">
-                     <VBox.margin>
-                        <Insets bottom="20.0" top="15.0" />
-                     </VBox.margin></Button>
+                            <VBox.margin>
+                                <Insets bottom="20.0" top="15.0" />
+                            </VBox.margin>
+                        </Button>
                     </children>
                 </VBox>
             </left>
         </BorderPane>
-      <VBox fx:id="vtnOptionUser" alignment="CENTER" layoutX="9.0" layoutY="59.0" prefHeight="116.0" prefWidth="226.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 6; -fx-border-radius: 5; -fx-background-radius: 10;" visible="false">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Cerrar Sesion">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Historial de compra" />
-         </children>
-      </VBox>
+        <VBox fx:id="vtnOptionUser" alignment="CENTER" layoutX="9.0" layoutY="59.0" prefHeight="116.0" prefWidth="226.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 6; -fx-border-radius: 5; -fx-background-radius: 10;" visible="false">
+            <children>
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Cerrar Sesion">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Historial de compra" />
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

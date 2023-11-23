@@ -1,32 +1,43 @@
 package modelo;
 
-// @author Juan Noriega
+import java.time.LocalDate;
 import java.util.Date;
 
 public class NodoUser {
 
-    private int id;
     private String nombre;
     private String correo;
     private String contrasenia;
     private String numTelefono;
-    private Date fechaNac;
+    private LocalDate fechaNac;
+    private NodoUser sig;
+    private NodoUser ant;
 
-    public NodoUser(int id, String nombre, String correo, String contrasenia, String numTelefono, Date fechaNac) {
-        this.id = id;
+    public NodoUser(String nombre, String correo, String contrasenia, String numTelefono, LocalDate fechaNac) {
+
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
         this.numTelefono = numTelefono;
         this.fechaNac = fechaNac;
+        this.sig = null;
+        this.ant = null;
     }
 
-    public int getId() {
-        return id;
+    public NodoUser getSig() {
+        return sig;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSig(NodoUser sig) {
+        this.sig = sig;
+    }
+
+    public NodoUser getAnt() {
+        return ant;
+    }
+
+    public void setAnt(NodoUser ant) {
+        this.ant = ant;
     }
 
     public String getNombre() {
@@ -61,11 +72,11 @@ public class NodoUser {
         this.numTelefono = numTelefono;
     }
 
-    public Date getFechaNac() {
+    public LocalDate getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
     }
 

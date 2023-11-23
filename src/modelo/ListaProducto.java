@@ -1,6 +1,5 @@
 package modelo;
 
-// @author Juan Noriega
 import java.util.Date;
 
 public class ListaProducto {

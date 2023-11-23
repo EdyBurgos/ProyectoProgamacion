@@ -18,12 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import modelo.ListaUser;
 
-/**
- * FXML Controller class
- *
- * @author Juan Noriega
- */
 public class ControllerPrincipal implements Initializable {
 
     @FXML
@@ -33,12 +29,11 @@ public class ControllerPrincipal implements Initializable {
     @FXML
     private Button btnReg;
 
-    /**
-     * Initializes the controller class.
-     */
+    ListaUser userMetod = new ListaUser();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        userMetod.cargarInfoUser();
     }
 
     @FXML
@@ -74,6 +69,7 @@ public class ControllerPrincipal implements Initializable {
 
             // Obtén el controlador de la segunda ventana si es necesario
             ControllerRegister controlRegister = loader.getController();
+            controlRegister.setMetodUser(userMetod);
 
             vtnRegister.showAndWait();
         } catch (IOException e) {

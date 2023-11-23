@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package controlador;
 
 import java.net.URL;
@@ -12,12 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import modelo.ListaUser;
 
-/**
- * FXML Controller class
- *
- * @author Juan Noriega
- */
 public class ControllerRegister implements Initializable {
 
     @FXML
@@ -35,9 +27,16 @@ public class ControllerRegister implements Initializable {
     @FXML
     private Button btnRegister;
 
-    /**
-     * Initializes the controller class.
-     */
+    ListaUser metodUser;
+
+    public ListaUser getMetodUser() {
+        return metodUser;
+    }
+
+    public void setMetodUser(ListaUser metodUser) {
+        this.metodUser = metodUser;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -45,6 +44,8 @@ public class ControllerRegister implements Initializable {
 
     @FXML
     private void RegistarUser(ActionEvent event) {
+        metodUser.addUser(txtNombre, txtCorreo, txtPasswd, txtNumCell, txtFechaNac);
+        metodUser.guardarInfoUser();
     }
 
 }

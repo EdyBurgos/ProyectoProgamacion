@@ -4,23 +4,25 @@
  */
 package controlador;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Juan Noriega
- */
 public class ControllerCatalogo implements Initializable {
 
     @FXML
@@ -53,6 +55,8 @@ public class ControllerCatalogo implements Initializable {
     private ImageView btnIconUser;
     @FXML
     private VBox vtnOptionUser;
+    @FXML
+    private Button btnComprar;
 
     /**
      * Initializes the controller class.
@@ -80,7 +84,6 @@ public class ControllerCatalogo implements Initializable {
         ImageView clickedImageView = (ImageView) event.getSource();
         Image clickedImage = clickedImageView.getImage();
 
-        // Coloca la imagen del ImageView clicado en el outputImageView
         unaFoto.setImage(clickedImage);
         contendDetalles.setVisible(true);
     }
@@ -94,5 +97,37 @@ public class ControllerCatalogo implements Initializable {
     @FXML
     private void OptionUser(MouseEvent event) {
         vtnOptionUser.setVisible(!vtnOptionUser.isVisible());
+    }
+
+    @FXML
+    private void RealizarCompra(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaMetodosPagos.fxml"));
+            Parent root = loader.load();
+
+            Stage vtnCatalogo = new Stage();
+            vtnCatalogo.setTitle("REALIZAR PAGO");
+            vtnCatalogo.setScene(new Scene(root));
+
+            // Obtén el controlador de la segunda ventana si es necesario
+            ControllerCatalogo controlCatalog = loader.getController();
+
+            vtnCatalogo.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    private void mostrarAlerta(String info, String msj) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setTitle(info);
+        alert.setContentText(msj);
+
+        DialogPane dialogPane = alert.getDialogPane();
+
+        alert.showAndWait();
+
     }
 }
