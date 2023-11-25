@@ -35,15 +35,14 @@ public class ListaUser {
     }
 
     public boolean verificarContraseña(String passwd) {
-        // Verifica si ya existe un usuario con el mismo correo
         NodoUser actual = cab;
         while (actual != null) {
             if (actual.getContrasenia().equals(passwd)) {
-                return true; // El correo ya está registrado
+                return true;
             }
             actual = actual.getSig();
         }
-        return false; // El correo no está registrado
+        return false;
     }
 
     public void addUser(

@@ -12,23 +12,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControllerCatalogo">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ControllerCatalogo">
     <children>
-        <BorderPane prefHeight="490.0" prefWidth="776.0" style="-fx-background-color: #185B00;">
+        <BorderPane prefHeight="540.0" prefWidth="872.0" style="-fx-background-color: #185B00;">
             <top>
                 <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #29B740;" BorderPane.alignment="CENTER">
                     <children>
-                        <ImageView fx:id="btnIconUser" fitHeight="63.0" fitWidth="66.0" onMouseClicked="#OptionUser" pickOnBounds="true" preserveRatio="true">
-                            <HBox.margin>
-                                <Insets right="520.0" />
-                            </HBox.margin>
-                            <image>
-                                <Image url="@../Imagenes/ICON_USER.png" />
-                            </image>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </ImageView>
+                  <HBox prefHeight="57.0" prefWidth="685.0">
+                     <children>
+                              <ImageView fx:id="btnIconUser" fitHeight="63.0" fitWidth="66.0" onMouseClicked="#OptionUser" pickOnBounds="true" preserveRatio="true">
+                                  <HBox.margin>
+                                      <Insets right="525.0" />
+                                  </HBox.margin>
+                                  <image>
+                                      <Image url="@../Imagenes/ICON_USER.png" />
+                                  </image>
+                                  <cursor>
+                                      <Cursor fx:constant="HAND" />
+                                  </cursor>
+                              </ImageView>
+                     </children>
+                  </HBox>
                         <Button fx:id="btnVerCarrio" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="25.0" prefWidth="78.0" text="Carrito">
                             <HBox.margin>
                                 <Insets right="10.0" />
@@ -243,14 +247,14 @@
                 </HBox>
             </center>
         </BorderPane>
-        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="417.0" prefWidth="776.0" style="-fx-background-color: #185B00;" visible="false">
+        <BorderPane fx:id="contendDetalles" layoutY="54.0" prefHeight="486.0" prefWidth="872.0" style="-fx-background-color: #185B00;" visible="false">
             <right>
-                <VBox alignment="TOP_CENTER" prefHeight="387.0" prefWidth="490.0" style="-fx-background-color: #29B740; -fx-background-radius: 15 0 0 0;" BorderPane.alignment="CENTER">
+                <VBox alignment="TOP_CENTER" prefHeight="456.0" prefWidth="601.0" style="-fx-background-color: #29B740; -fx-background-radius: 15 0 0 0;" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets top="30.0" />
                     </BorderPane.margin>
                     <children>
-                        <Label text="TITULO LIBRO" textFill="WHITE">
+                        <Label fx:id="lblTituloLib" text="TITULO LIBRO" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
@@ -266,7 +270,7 @@
                                 <Insets top="30.0" />
                             </padding>
                         </Label>
-                        <Label prefHeight="264.0" prefWidth="455.0" text="BREVE DESCRIPCION DEL LIBRO" textFill="WHITE" wrapText="true">
+                        <Label fx:id="lblDesc" prefHeight="264.0" prefWidth="455.0" text="BREVE DESCRIPCION DEL LIBRO" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -280,7 +284,20 @@
             <left>
                 <VBox alignment="TOP_CENTER" prefHeight="417.0" prefWidth="258.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#VolverCatalogo" text="VOLVER" />
+                        <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#VolverCatalogo" prefHeight="50.0" prefWidth="31.0" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/RETURN.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets right="190.0" top="10.0" />
+                     </VBox.margin></Button>
                         <ImageView fx:id="unaFoto" fitHeight="214.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
                             <VBox.margin>
                                 <Insets top="15.0" />
@@ -294,20 +311,38 @@
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#RealizarCompra" prefWidth="150.0" text="Comprar">
+                        <Button fx:id="btnComprar" mnemonicParsing="false" onAction="#RealizarCompra" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Comprar" textFill="WHITE">
                             <VBox.margin>
                                 <Insets top="15.0" />
                             </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Agregar al carrito">
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar al carrito" textFill="WHITE">
                             <VBox.margin>
                                 <Insets top="15.0" />
                             </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Agregar a favoritos">
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar a favoritos" textFill="WHITE">
                             <VBox.margin>
                                 <Insets bottom="20.0" top="15.0" />
                             </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
                         </Button>
                     </children>
                 </VBox>

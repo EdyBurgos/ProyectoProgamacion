@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package controlador;
+//a
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -57,6 +59,10 @@ public class ControllerCatalogo implements Initializable {
     private VBox vtnOptionUser;
     @FXML
     private Button btnComprar;
+    @FXML
+    private Label lblTituloLib;
+    @FXML
+    private Label lblDesc;
 
     /**
      * Initializes the controller class.
@@ -76,7 +82,25 @@ public class ControllerCatalogo implements Initializable {
 
     @FXML
     private void MostrarLibro(ActionEvent event) {
+        Button botonPresionado = (Button) event.getSource();
+        String idBoton = botonPresionado.getId();
+        System.out.println("ID del botón presionado: " + idBoton);
+        if (idBoton.equals("btnDetalles1")) {
+            Image image = imgVLib1.getImage();
+            unaFoto.setImage(image);
+        } else if (idBoton.equals("btnDetalles2")) {
+            Image image = imgVLib2.getImage();
+            unaFoto.setImage(image);
+        } else if (idBoton.equals("btnDetalles3")) {
+            Image image = imgVLib3.getImage();
+            unaFoto.setImage(image);
+
+        } else if (idBoton.equals("btnDetalles4")) {
+            Image image = imgVLib4.getImage();
+            unaFoto.setImage(image);
+        }
         contendDetalles.setVisible(true);
+
     }
 
     @FXML
@@ -97,7 +121,7 @@ public class ControllerCatalogo implements Initializable {
     @FXML
     private void OptionUser(MouseEvent event) {
         vtnOptionUser.setVisible(!vtnOptionUser.isVisible());
-        
+
     }
 
     @FXML
