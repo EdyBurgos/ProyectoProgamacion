@@ -38,32 +38,36 @@ public class ControllerPrincipal implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userMetod.cargarInfoUser();
-        
+
     }
 
     @FXML
     private void IniciarSesion(ActionEvent event) {
-        if (userMetod.getUser(txtNomUser.getText())){
-            
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaCatalogo.fxml"));
-                Parent root = loader.load();
+        if (userMetod.getUser(txtNomUser.getText())) {
+            if (userMetod.verificarContraseña(txtPasswd.getText())) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/VistaCatalogo.fxml"));
+                    Parent root = loader.load();
 
-                Stage vtnCatalogo = new Stage();
-                vtnCatalogo.setTitle("CATALOGO");
-                vtnCatalogo.setScene(new Scene(root));
+                    Stage vtnCatalogo = new Stage();
+                    vtnCatalogo.setTitle("CATALOGO");
+                    vtnCatalogo.setScene(new Scene(root));
 
-                // Obtén el controlador de la segunda ventana si es necesario
-                ControllerCatalogo controlCatalog = loader.getController();
+                    // Obtén el controlador de la segunda ventana si es necesario
+                    ControllerCatalogo controlCatalog = loader.getController();
 
-                mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
-                vtnCatalogo.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
+                    mostrarAlerta("INFO LOGIN", "HA INICIADO SESION");
+                    vtnCatalogo.showAndWait();
+                } catch (IOException e) {
+                    e.printStackTrace();
 
+                }
+            } else {
+                mostrarAlerta("INFO LOGIN", "Contraseña incorrecta");
             }
-        } else{
-            mostrarAlerta("INFO LOGIN", "Hubo un error");
+        } else {
+            mostrarAlerta("INFO LOGIN", "El usuario no existe por favor registrese");
+            btnReg.fire();
         }
     }
 

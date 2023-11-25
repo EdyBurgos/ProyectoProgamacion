@@ -3,22 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerMetodosPagos.java</file>
             <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ZMain.java</file>
             <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaUser.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaMetodosPagos.fxml</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoCarrito.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaProducto.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerCatalogo.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerMetodosPagos.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaRegister.fxml</file>
             <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerPrincipal.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoProducto.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/estilos/styles.css</file>
             <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/NodoUser.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaCatalogo.fxml</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/modelo/ListaCarrito.java</file>
             <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerRegister.java</file>
-            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/vista/VistaPrincipal.fxml</file>
+            <file>file:/C:/Users/JcNoriega/Documents/NetBeansProjects/ProyectoProgramacion/src/controlador/ControllerCatalogo.java</file>
         </group>
     </open-files>
 </project-private>

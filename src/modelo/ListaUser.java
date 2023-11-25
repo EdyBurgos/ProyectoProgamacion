@@ -11,6 +11,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
+import javafx.util.StringConverter;
 
 public class ListaUser {
 
@@ -25,6 +27,18 @@ public class ListaUser {
         NodoUser actual = cab;
         while (actual != null) {
             if (actual.getCorreo().equals(correo)) {
+                return true; // El correo ya está registrado
+            }
+            actual = actual.getSig();
+        }
+        return false; // El correo no está registrado
+    }
+
+    public boolean verificarContraseña(String passwd) {
+        // Verifica si ya existe un usuario con el mismo correo
+        NodoUser actual = cab;
+        while (actual != null) {
+            if (actual.getContrasenia().equals(passwd)) {
                 return true; // El correo ya está registrado
             }
             actual = actual.getSig();
@@ -183,6 +197,48 @@ public class ListaUser {
 
     public void makeBuy() {
 
+    }
+
+    public void configurarTextFieldNumerico(TextField textField) {
+        // Configurar un TextFormatter para aceptar solo dígitos
+        StringConverter<Double> converter = new StringConverter<Double>() {
+            @Override
+            public String toString(Double object) {
+                // Convierte el valor a cadena
+                return object == null ? "" : object.toString();
+            }
+
+            @Override
+            public Double fromString(String string) {
+                // Intenta convertir la cadena a un valor numérico
+                try {
+                    return string.isEmpty() ? 0.0 : Double.parseDouble(string);
+                } catch (NumberFormatException e) {
+                    return 0.0;
+                }
+            }
+        };
+
+        TextFormatter<Double> textFormatter = new TextFormatter<>(converter, 0.0,
+                change -> {
+                    // Verificar si el nuevo valor es numérico
+                    if (esNumero(change.getControlNewText())) {
+                        return change;
+                    } else {
+                        return null; // No permitir la entrada si no es numérico
+                    }
+                });
+
+        textField.setTextFormatter(textFormatter);
+    }
+
+    private static boolean esNumero(String texto) {
+        try {
+            Double.parseDouble(texto);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }
