@@ -33,7 +33,7 @@
                               </ImageView>
                      </children>
                   </HBox>
-                        <Button fx:id="btnVerCarrio" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="25.0" prefWidth="78.0" text="Carrito">
+                        <Button fx:id="btnVerCarrito" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="25.0" prefWidth="78.0" text="Carrito">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
@@ -322,7 +322,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar al carrito" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#AggCarrito" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar al carrito" textFill="WHITE">
                             <VBox.margin>
                                 <Insets top="15.0" />
                             </VBox.margin>
@@ -333,7 +333,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar a favoritos" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#AggFavoritos" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #29B740;" text="Agregar a favoritos" textFill="WHITE">
                             <VBox.margin>
                                 <Insets bottom="20.0" top="15.0" />
                             </VBox.margin>
@@ -358,5 +358,21 @@
                 <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Historial de compra" />
             </children>
         </VBox>
+      <VBox fx:id="contentCarrito" alignment="TOP_CENTER" layoutX="453.0" layoutY="40.0" prefHeight="365.0" prefWidth="319.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5; -fx-border-radius: 8; -fx-background-radius: 10;" visible="false">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="309.0" style="-fx-background-color: #185B00;" text="REALIZAR COMPRA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="contentFavoritos" alignment="TOP_CENTER" layoutX="543.0" layoutY="40.0" prefHeight="365.0" prefWidth="319.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5; -fx-border-radius: 8; -fx-background-radius: 10;" visible="false" />
     </children>
 </AnchorPane>

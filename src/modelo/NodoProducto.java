@@ -9,10 +9,10 @@ public class NodoProducto {
     private String autor;
     private String descripcion;
     private double precio;
-    private Date fechaPublicacion;
+    private String fechaPublicacion;
     private NodoProducto sig, ant;
 
-    public NodoProducto(int id, String titulo, String autor, String descripcion, double precio, Date fechaPublicacion, NodoProducto sig, NodoProducto ant) {
+    public NodoProducto(int id, String titulo, String autor, String descripcion, double precio, String fechaPublicacion, NodoProducto sig, NodoProducto ant) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -21,6 +21,14 @@ public class NodoProducto {
         this.fechaPublicacion = fechaPublicacion;
         this.sig = sig;
         this.ant = ant;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public int getId() {
@@ -55,11 +63,11 @@ public class NodoProducto {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaPublicacion() {
+    public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 }

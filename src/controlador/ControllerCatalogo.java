@@ -22,13 +22,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ControllerCatalogo implements Initializable {
 
-    @FXML
-    private Button btnVerCarrio;
     @FXML
     private Button btnVerFavoritos;
     @FXML
@@ -63,6 +62,12 @@ public class ControllerCatalogo implements Initializable {
     private Label lblTituloLib;
     @FXML
     private Label lblDesc;
+    @FXML
+    private VBox contentCarrito;
+    @FXML
+    private VBox contentFavoritos;
+    @FXML
+    private Button btnVerCarrito;
 
     /**
      * Initializes the controller class.
@@ -74,10 +79,14 @@ public class ControllerCatalogo implements Initializable {
 
     @FXML
     private void VerCarrito(ActionEvent event) {
+        contentCarrito.setVisible(!contentCarrito.isVisible());
+        contentFavoritos.setVisible(false);
     }
 
     @FXML
     private void VerFavoritos(ActionEvent event) {
+        contentFavoritos.setVisible(!contentFavoritos.isVisible());
+        contentCarrito.setVisible(false);
     }
 
     @FXML
@@ -154,5 +163,18 @@ public class ControllerCatalogo implements Initializable {
 
         alert.showAndWait();
 
+    }
+
+    @FXML
+    private void AggCarrito(ActionEvent event) {
+
+    }
+
+    @FXML
+    private void AggFavoritos(ActionEvent event) {
+        Button btnDel = new Button("ELIMINAR ELEMENTO");
+        GridPane contLibSelected = new GridPane();
+        contLibSelected.add(btnDel, 0, 0);
+        contentFavoritos.getChildren().add(contLibSelected);
     }
 }
