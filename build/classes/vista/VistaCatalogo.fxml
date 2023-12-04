@@ -33,21 +33,35 @@
                               </ImageView>
                      </children>
                   </HBox>
-                        <Button fx:id="btnVerCarrito" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="25.0" prefWidth="78.0" text="Carrito">
+                        <Button fx:id="btnVerCarrito" mnemonicParsing="false" onAction="#VerCarrito" prefHeight="53.0" prefWidth="46.0" style="-fx-background-color: transparent;">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/carrito-de-compras.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                         </Button>
-                        <Button fx:id="btnVerFavoritos" mnemonicParsing="false" onAction="#VerFavoritos" prefHeight="25.0" prefWidth="78.0" text="Favoritos">
+                        <Button fx:id="btnVerFavoritos" mnemonicParsing="false" onAction="#VerFavoritos" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: transparent;">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/estrella.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                         </Button>
                     </children>
                 </HBox>
@@ -390,7 +404,7 @@
         </VBox>
       <VBox fx:id="contentCarrito" alignment="TOP_CENTER" layoutX="453.0" layoutY="40.0" prefHeight="365.0" prefWidth="319.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 5; -fx-border-radius: 8; -fx-background-radius: 10;" visible="false">
          <children>
-            <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="309.0" style="-fx-background-color: #185B00;" text="REALIZAR COMPRA" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#ReealizarCompra" prefHeight="52.0" prefWidth="309.0" style="-fx-background-color: #185B00;" text="REALIZAR COMPRA" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

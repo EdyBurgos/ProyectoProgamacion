@@ -15,7 +15,7 @@ public class ZMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista/VistaCatalogo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/vista/VistaPrincipal.fxml"));
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

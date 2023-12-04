@@ -13,10 +13,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import modelo.ListaCarrito;
 
 public class ControllerMetodosPagos implements Initializable {
+
+    ListaCarrito metodsCarrito = new ListaCarrito();
+    ControllerCatalogo controller;
+    int cont = 0;
 
     @FXML
     private ComboBox<String> cmbMetodos;
@@ -32,10 +39,21 @@ public class ControllerMetodosPagos implements Initializable {
     private TextField txtFechaExp;
     @FXML
     private TextField txtCorreo;
+    @FXML
+    private ImageView imgVPicLib;
 
-    /**
-     * Initializes the controller class.
-     */
+    public void setImagenSS(Image imagen) {
+        imgVPicLib.setImage(imagen);
+    }
+
+    public void setControllerAnt(ControllerCatalogo controlCat) {
+        this.controller = controlCat;
+    }
+
+    public ControllerCatalogo controlCat() {
+        return controller;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<String> elementos = FXCollections.observableArrayList("Selecciones una opcion",
@@ -50,6 +68,18 @@ public class ControllerMetodosPagos implements Initializable {
 
     @FXML
     private void RealizarPago(ActionEvent event) {
+        if (cmbMetodos.getSelectionModel().getSelectedIndex() > 0) {
+            if (!txtNumCuenta.getText().isEmpty()) {
+                String title = controlCat().getLblTituloLib().getText();
+                String autor = obtenerTextoDespuesDosPuntos(controlCat().getLblAutorSelec());
+                String precio = obtenerTextoDespuesDosPuntos(controlCat().getLblPrecioMuestra());
+                String desc = controlCat().getLblDescLib().getText();
+                String fechaPubl = obtenerTextoDespuesDosPuntos(controlCat().getLblFechaLibSelec());
+                cont++;
+                metodsCarrito.aggLibCarrito(cont, title, autor, Double.parseDouble(precio), desc, fechaPubl);
+                metodsCarrito.guardarInfoCarrShoping();
+            }
+        }
     }
 
     @FXML
@@ -102,6 +132,12 @@ public class ControllerMetodosPagos implements Initializable {
                 System.out.println("None");
         }
 
+    }
+
+    private String obtenerTextoDespuesDosPuntos(Label label) {
+        String textoCompleto = label.getText();
+        int indiceDosPuntos = textoCompleto.indexOf(":");
+        return indiceDosPuntos != -1 ? textoCompleto.substring(indiceDosPuntos + 1).trim() : "";
     }
 
 }

@@ -12,16 +12,33 @@ public class NodoProducto {
     private String fechaPublicacion;
     private NodoProducto sig, ant;
 
-    public NodoProducto(int id, String titulo, String autor, String descripcion, double precio, String fechaPublicacion, NodoProducto sig, NodoProducto ant) {
+    public NodoProducto(int id, String titulo, String autor, String descripcion, double precio, String fechaPublicacion) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.descripcion = descripcion;
         this.precio = precio;
         this.fechaPublicacion = fechaPublicacion;
+        this.sig = null;
+        this.ant = null;
+    }
+
+    public NodoProducto getSig() {
+        return sig;
+    }
+
+    public void setSig(NodoProducto sig) {
         this.sig = sig;
+    }
+
+    public NodoProducto getAnt() {
+        return ant;
+    }
+
+    public void setAnt(NodoProducto ant) {
         this.ant = ant;
     }
+    
 
     public double getPrecio() {
         return precio;

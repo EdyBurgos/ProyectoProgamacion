@@ -226,6 +226,8 @@ public class ControllerCatalogo implements Initializable {
     @FXML
     private void OptionUser(MouseEvent event) {
         vtnOptionUser.setVisible(!vtnOptionUser.isVisible());
+        contentCarrito.setVisible(false);
+        contentFavoritos.setVisible(false);
 
     }
 
@@ -240,7 +242,11 @@ public class ControllerCatalogo implements Initializable {
             vtnPagos.setScene(new Scene(root));
 
             // Obtén el controlador de la segunda ventana si es necesario
-            ControllerMetodosPagos controlCatalog = loader.getController();
+            ControllerMetodosPagos controlMetodosP = loader.getController();
+            controlMetodosP.setControllerAnt(this);
+
+            Image imagen = unaFoto.getImage();
+            controlMetodosP.setImagenSS(imagen);
 
             vtnPagos.showAndWait();
         } catch (IOException e) {
@@ -335,4 +341,36 @@ public class ControllerCatalogo implements Initializable {
 
         contentFavoritos.getChildren().add(contLibSelected);
     }
+
+    @FXML
+    private void ReealizarCompra(ActionEvent event) {
+
+    }
+
+    private String obtenerTextoDespuesDosPuntos(Label label) {
+        String textoCompleto = label.getText();
+        int indiceDosPuntos = textoCompleto.indexOf(":");
+        return indiceDosPuntos != -1 ? textoCompleto.substring(indiceDosPuntos + 1).trim() : "";
+    }
+
+    public Label getLblTituloLib() {
+        return lblTituloLib;
+    }
+
+    public Label getLblPrecioMuestra() {
+        return lblPrecioMuestra;
+    }
+
+    public Label getLblDescLib() {
+        return lblDescLib;
+    }
+
+    public Label getLblAutorSelec() {
+        return lblAutorSelec;
+    }
+
+    public Label getLblFechaLibSelec() {
+        return lblFechaLibSelec;
+    }
+
 }

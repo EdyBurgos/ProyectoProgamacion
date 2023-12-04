@@ -27,7 +27,7 @@
                 </Label>
             </top>
             <left>
-                <ImageView fitHeight="272.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
+                <ImageView fx:id="imgVPicLib" fitHeight="272.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
                     <BorderPane.margin>
                         <Insets bottom="50.0" left="40.0" />
                     </BorderPane.margin>
