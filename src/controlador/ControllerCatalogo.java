@@ -19,6 +19,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -30,9 +31,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import modelo.ListaCarrito;
 
 public class ControllerCatalogo implements Initializable {
 
+    ListaCarrito metodCarrito = new ListaCarrito();
+    int cont = 0;
     @FXML
     private Button btnVerFavoritos;
     @FXML
@@ -268,21 +272,19 @@ public class ControllerCatalogo implements Initializable {
     }
 
     @FXML
-    private void AggCarrito(ActionEvent event) {
+    public void AggCarrito(ActionEvent event) {
+        final int nodoId = cont;
+        Label lblId = new Label();
         Label lblTitulo = new Label();
         Label lblAutor = new Label();
         Label lblFechaPublic = new Label();
         Label lblPrecio = new Label();
         Button btnDel = new Button("ELIMINAR ELEMENTO");
+        Spinner<Integer> cantLib = new Spinner<>(1, 10, 1);
+
         GridPane contLibSelected = new GridPane();
         ColumnConstraints column = new ColumnConstraints();
-        btnDel.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Botón clickeado");
-                contentCarrito.getChildren().remove(contLibSelected);
-            }
-        });
+        cont++;
 
         column.setPrefWidth(contentCarrito.getWidth() / 2);
 
@@ -290,6 +292,7 @@ public class ControllerCatalogo implements Initializable {
         contLibSelected.prefWidth(contentCarrito.getMaxWidth());
         contLibSelected.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
 
+        lblId.setText(String.valueOf(cont));
         lblTitulo.setText(lblTituloLib.getText());
         lblAutor.setText(lblAutorSelec.getText());
         lblFechaPublic.setText(lblFechaLibSelec.getText());
@@ -300,9 +303,27 @@ public class ControllerCatalogo implements Initializable {
         contLibSelected.add(lblFechaPublic, 0, 1);
         contLibSelected.add(lblPrecio, 1, 1);
         contLibSelected.add(btnDel, 0, 2);
+        contLibSelected.add(cantLib, 1, 2);
 
         contentCarrito.getChildren().add(contLibSelected);
-
+        String title = lblTituloLib.getText();
+        String autor = obtenerTextoDespuesDosPuntos(lblAutorSelec);
+        String precio = obtenerTextoDespuesDosPuntos(lblPrecioMuestra);
+        String desc = lblDescLib.getText();
+        String fechaPubl = obtenerTextoDespuesDosPuntos(lblFechaLibSelec);
+        metodCarrito.aggLibCarrito(cont, title, autor, Double.parseDouble(precio), desc, fechaPubl);
+        
+        metodCarrito.verElementosCarrito();
+        btnDel.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón clickeado");
+                metodCarrito.delLibCarrito(nodoId);
+                metodCarrito.verElementosCarrito();
+                
+                contentCarrito.getChildren().remove(contLibSelected);
+            }
+        });
     }
 
     @FXML

@@ -70,14 +70,8 @@ public class ControllerMetodosPagos implements Initializable {
     private void RealizarPago(ActionEvent event) {
         if (cmbMetodos.getSelectionModel().getSelectedIndex() > 0) {
             if (!txtNumCuenta.getText().isEmpty()) {
-                String title = controlCat().getLblTituloLib().getText();
-                String autor = obtenerTextoDespuesDosPuntos(controlCat().getLblAutorSelec());
-                String precio = obtenerTextoDespuesDosPuntos(controlCat().getLblPrecioMuestra());
-                String desc = controlCat().getLblDescLib().getText();
-                String fechaPubl = obtenerTextoDespuesDosPuntos(controlCat().getLblFechaLibSelec());
-                cont++;
-                metodsCarrito.aggLibCarrito(cont, title, autor, Double.parseDouble(precio), desc, fechaPubl);
-                metodsCarrito.guardarInfoCarrShoping();
+                controlCat().AggCarrito(event);
+                controlCat().metodCarrito.guardarInfoCarrShoping();
             }
         }
     }

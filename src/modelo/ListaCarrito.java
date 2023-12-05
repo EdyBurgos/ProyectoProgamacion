@@ -18,6 +18,26 @@ public class ListaCarrito {
     }
 
     public void delLibCarrito(int id) {
+        NodoCarrito actual = cab;
+
+        // Buscar el nodo con el ID proporcionado
+        while (actual != null && actual.getId() != id) {
+            actual = (NodoCarrito) actual.getSig();
+        }
+
+        // Si se encuentra el nodo con el ID, eliminarlo
+        if (actual != null) {
+            // Actualizar los enlaces de los nodos adyacentes
+            if (actual.getAnt() != null) {
+                actual.getAnt().setSig(actual.getSig());
+            } else {
+                cab = (NodoCarrito) actual.getSig();  // El nodo a eliminar es el primero
+            }
+
+            if (actual.getSig() != null) {
+                actual.getSig().setAnt(actual.getAnt());
+            }
+        }
 
     }
 
@@ -34,7 +54,25 @@ public class ListaCarrito {
             cab = nuevoNodo; // El nuevo nodo ahora es la cabecera
         }
     }
-    
+
+    public void verElementosCarrito() {
+        NodoCarrito actual = cab;
+
+        System.out.println("Elementos en el carrito:");
+
+        while (actual != null) {
+            System.out.println("ID: " + actual.getId());
+            System.out.println("Título: " + actual.getTitulo());
+            System.out.println("Autor: " + actual.getAutor());
+            System.out.println("Descripción: " + actual.getDescripcion());
+            System.out.println("Precio: " + actual.getPrecio());
+            System.out.println("Fecha de Publicación: " + actual.getFechaPublicacion());
+            System.out.println("----------------------");
+
+            actual = (NodoCarrito) actual.getSig();
+        }
+    }
+
     public void guardarInfoCarrShoping() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("archivoCarrito.txt"))) {
             NodoCarrito actual = cab;
