@@ -99,7 +99,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button fx:id="btnPagar" mnemonicParsing="false" onAction="#RealizarPago" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: #185B00; -fx-background-radius: 15;" text="INGRESAR" textFill="WHITE">
+                                <Button fx:id="btnPagar" mnemonicParsing="false" onAction="#RealizarPago" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: #185B00; -fx-background-radius: 15;" text="REALIZAR PAGO" textFill="WHITE">
                                     <HBox.margin>
                                         <Insets right="20.0" />
                                     </HBox.margin>
@@ -110,6 +110,14 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
+                        <Button fx:id="btnPagar1" mnemonicParsing="false" onAction="#cancelarPago" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: #185B00; -fx-background-radius: 15;" text="CANCELAR" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                             </children>
                         </HBox>
                     </children>

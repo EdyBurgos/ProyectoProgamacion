@@ -11,12 +11,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import modelo.ListaCarrito;
 
 public class ControllerMetodosPagos implements Initializable {
@@ -41,6 +43,8 @@ public class ControllerMetodosPagos implements Initializable {
     private TextField txtCorreo;
     @FXML
     private ImageView imgVPicLib;
+    @FXML
+    private Button btnPagar1;
 
     public void setImagenSS(Image imagen) {
         imgVPicLib.setImage(imagen);
@@ -132,6 +136,12 @@ public class ControllerMetodosPagos implements Initializable {
         String textoCompleto = label.getText();
         int indiceDosPuntos = textoCompleto.indexOf(":");
         return indiceDosPuntos != -1 ? textoCompleto.substring(indiceDosPuntos + 1).trim() : "";
+    }
+
+    @FXML
+    private void cancelarPago(ActionEvent event) {
+        Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageActual.close();
     }
 
 }

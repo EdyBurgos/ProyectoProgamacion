@@ -5,6 +5,8 @@
 package controlador;
 //a
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +22,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -115,13 +119,47 @@ public class ControllerCatalogo implements Initializable {
     private Label lblTitle1;
     @FXML
     private Label lblTitle3;
+    @FXML
+    private TableView tblHistorialCompra;
+    @FXML
+    private TableColumn<String, String> colId;
+    @FXML
+    private TableColumn<String, String> colTitulo;
+    @FXML
+    private TableColumn<String, String> colAutor;
+    @FXML
+    private TableColumn<String, String> colFechaSalida;
+    @FXML
+    private Button btnMostrarHistorial;
+    @FXML
+    private BorderPane contHistorialComp;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+    }
+
+    private void setupTableColumns() {
+        // Configurar cómo obtener los valores de cada celda
+        colId.setCellValueFactory(data -> javafx.beans.binding.Bindings.createObjectBinding(() -> data.getValue()));
+        colTitulo.setCellValueFactory(data -> javafx.beans.binding.Bindings.createObjectBinding(() -> data.getValue()));
+        colAutor.setCellValueFactory(data -> javafx.beans.binding.Bindings.createObjectBinding(() -> data.getValue()));
+        colFechaSalida.setCellValueFactory(data -> javafx.beans.binding.Bindings.createObjectBinding(() -> data.getValue()));
+    }
+
+    private void loadTXTData() {
+        try (BufferedReader br = new BufferedReader(new FileReader("archivoCarrito.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                // Crear una fila para la tabla y agregarla directamente
+                javafx.collections.ObservableList<String> row = javafx.collections.FXCollections.observableArrayList(data);
+                tblHistorialCompra.getItems().add(row);
+                System.out.println("Archivo cargado correctamente");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -312,7 +350,7 @@ public class ControllerCatalogo implements Initializable {
         String desc = lblDescLib.getText();
         String fechaPubl = obtenerTextoDespuesDosPuntos(lblFechaLibSelec);
         metodCarrito.aggLibCarrito(cont, title, autor, Double.parseDouble(precio), desc, fechaPubl);
-        
+
         metodCarrito.verElementosCarrito();
         btnDel.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -320,7 +358,7 @@ public class ControllerCatalogo implements Initializable {
                 System.out.println("Botón clickeado");
                 metodCarrito.delLibCarrito(nodoId);
                 metodCarrito.verElementosCarrito();
-                
+
                 contentCarrito.getChildren().remove(contLibSelected);
             }
         });
@@ -374,24 +412,16 @@ public class ControllerCatalogo implements Initializable {
         return indiceDosPuntos != -1 ? textoCompleto.substring(indiceDosPuntos + 1).trim() : "";
     }
 
-    public Label getLblTituloLib() {
-        return lblTituloLib;
+    @FXML
+    private void MostralHistorial(ActionEvent event) {
+        contHistorialComp.setVisible(true);
+
     }
 
-    public Label getLblPrecioMuestra() {
-        return lblPrecioMuestra;
-    }
-
-    public Label getLblDescLib() {
-        return lblDescLib;
-    }
-
-    public Label getLblAutorSelec() {
-        return lblAutorSelec;
-    }
-
-    public Label getLblFechaLibSelec() {
-        return lblFechaLibSelec;
+    @FXML
+    private void cerrarHistorial(MouseEvent event) {
+        contHistorialComp.setVisible(false);
+        vtnOptionUser.setVisible(false);
     }
 
 }
